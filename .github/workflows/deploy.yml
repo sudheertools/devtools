@@ -12,6 +12,7 @@ permissions:
 
 concurrency:
   group: "pages"
+  # GitHub Pages deployment
   cancel-in-progress: false
 
 jobs:
