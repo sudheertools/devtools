@@ -44,7 +44,7 @@ export const tools: Tool[] = [
     category: "encoding",
     description: "Encode text to Base64 format. Supports Unicode characters.",
     icon: "ENC",
-    href: "/tools/base64-encode",
+    href: "/base64-encode",
     relatedSlugs: ["base64-decode"],
   },
   {
@@ -53,7 +53,7 @@ export const tools: Tool[] = [
     category: "encoding",
     description: "Decode Base64 encoded text back to readable format.",
     icon: "DEC",
-    href: "/tools/base64-decode",
+    href: "/base64-decode",
     relatedSlugs: ["base64-encode"],
   },
 ];
