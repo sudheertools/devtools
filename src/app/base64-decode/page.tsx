@@ -125,7 +125,7 @@ export default function Base64DecodePage() {
         description="Decode Base64 encoded text back to plain text. Supports Unicode characters."
         breadcrumbs={[
           { label: "Home", href: "/" },
-          { label: "Tools", href: "/#tools" },
+          { label: "Tools", href: "/" },
           { label: "Base64 Decoder" },
         ]}
       >
@@ -175,7 +175,7 @@ export default function Base64DecodePage() {
           </svg>
           Need to encode text to Base64?{" "}
           <Link
-            href="/tools/base64-encode"
+            href="/base64-encode"
             className="text-blue-600 hover:underline dark:text-blue-400"
           >
             Try the Base64 Encoder →
