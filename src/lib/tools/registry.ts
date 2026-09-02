@@ -56,7 +56,7 @@ export const tools: Tool[] = [
     description: "Encode text to Base64 format. Supports Unicode characters.",
     icon: "ENC",
     href: "/base64-encode",
-    relatedSlugs: ["base64-decode"],
+    relatedSlugs: ["base64-decode", "image-to-base64"],
   },
   {
     name: "Base64 Decoder",
@@ -65,7 +65,7 @@ export const tools: Tool[] = [
     description: "Decode Base64 encoded text back to readable format.",
     icon: "DEC",
     href: "/base64-decode",
-    relatedSlugs: ["base64-encode"],
+    relatedSlugs: ["base64-encode", "base64-to-image"],
   },
   {
     name: "URL Encoder",
@@ -102,6 +102,24 @@ export const tools: Tool[] = [
     icon: "HDC",
     href: "/html-decode",
     relatedSlugs: ["html-encode"],
+  },
+  {
+    name: "Image to Base64",
+    slug: "image-to-base64",
+    category: "encoding",
+    description: "Convert images to Base64 encoded strings. Supports PNG, JPG, GIF, and more.",
+    icon: "IMG",
+    href: "/image-to-base64",
+    relatedSlugs: ["base64-to-image", "base64-encode"],
+  },
+  {
+    name: "Base64 to Image",
+    slug: "base64-to-image",
+    category: "encoding",
+    description: "Decode Base64 encoded strings back to images.",
+    icon: "B64",
+    href: "/base64-to-image",
+    relatedSlugs: ["image-to-base64", "base64-decode"],
   },
   // Generation
   {
