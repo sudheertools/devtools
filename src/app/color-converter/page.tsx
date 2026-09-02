@@ -1,6 +1,7 @@
 "use client";
 
 import { useState, useCallback } from "react";
+import SEOHead from "@/components/seo/SEOHead";
 import ToolLayout from "@/components/layout/ToolLayout";
 import Button from "@/components/ui/Button";
 import Toast from "@/components/ui/Toast";
@@ -72,9 +73,15 @@ export default function ColorConverterPage() {
 
   return (
     <>
+      <SEOHead
+        title="Color Converter - Free Online Tool"
+        description="Convert colors between HEX, RGB, and HSL formats instantly. Free online color converter with live preview for web design and development."
+        keywords="color converter, hex to rgb, rgb to hex, hsl converter, color format converter"
+        canonical="https://sudheertools.github.io/color-converter"
+      />
       <ToolLayout
         title="Color Converter"
-        description="Convert between HEX, RGB, and HSL color formats."
+        description="Convert colors between HEX, RGB, and HSL formats with real-time preview. Supports interactive color picking and instant format conversion for web development."
         breadcrumbs={[
           { label: "Home", href: "/" },
           { label: "Tools", href: "/" },

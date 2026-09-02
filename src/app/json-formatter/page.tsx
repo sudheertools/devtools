@@ -1,6 +1,7 @@
 "use client";
 
 import { useState } from "react";
+import SEOHead from "@/components/seo/SEOHead";
 import ToolLayout from "@/components/layout/ToolLayout";
 import TextArea from "@/components/ui/TextArea";
 import Button from "@/components/ui/Button";
@@ -78,9 +79,15 @@ export default function JSONFormatterPage() {
 
   return (
     <>
+      <SEOHead
+        title="JSON Formatter - Free Online Tool"
+        description="Format, validate, minify, and beautify JSON data instantly. Free online JSON formatter with syntax validation and pretty print options."
+        keywords="json formatter, format json, json validator, json beautifier, pretty print json"
+        canonical="https://sudheertools.github.io/json-formatter"
+      />
       <ToolLayout
         title="JSON Formatter"
-        description="Format, validate, and beautify JSON data."
+        description="Format, validate, minify, and beautify JSON data with syntax highlighting. Supports customizable indentation and real-time validation with error reporting."
         breadcrumbs={[
           { label: "Home", href: "/" },
           { label: "Tools", href: "/" },

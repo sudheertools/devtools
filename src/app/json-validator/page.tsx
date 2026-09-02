@@ -1,6 +1,7 @@
 "use client";
 
 import { useState } from "react";
+import SEOHead from "@/components/seo/SEOHead";
 import ToolLayout from "@/components/layout/ToolLayout";
 import TextArea from "@/components/ui/TextArea";
 import Button from "@/components/ui/Button";
@@ -40,9 +41,15 @@ export default function JSONValidatorPage() {
 
   return (
     <>
+      <SEOHead
+        title="JSON Validator - Free Online Tool"
+        description="Validate JSON syntax and check for errors instantly. Free online JSON validator with detailed error messages and structure analysis."
+        keywords="json validator, validate json, json syntax checker, json error finder, json linter"
+        canonical="https://sudheertools.github.io/json-validator"
+      />
       <ToolLayout
         title="JSON Validator"
-        description="Validate JSON syntax and check for errors."
+        description="Validate JSON syntax and structure with detailed error messages. Instantly check if your JSON data is properly formatted and identify syntax issues."
         breadcrumbs={[
           { label: "Home", href: "/" },
           { label: "Tools", href: "/" },

@@ -1,6 +1,7 @@
 "use client";
 
 import { useState } from "react";
+import SEOHead from "@/components/seo/SEOHead";
 import ToolLayout from "@/components/layout/ToolLayout";
 import Button from "@/components/ui/Button";
 import Toast from "@/components/ui/Toast";
@@ -71,9 +72,15 @@ export default function CronGeneratorPage() {
 
   return (
     <>
+      <SEOHead
+        title="Cron Expression Generator - Free Online Tool"
+        description="Generate and describe cron expressions for task scheduling. Free online cron job generator with presets, human-readable descriptions, and next run times."
+        keywords="cron generator, cron expression, cron job, cron schedule, task scheduler"
+        canonical="https://sudheertools.github.io/cron-generator"
+      />
       <ToolLayout
         title="Cron Expression Generator"
-        description="Generate and describe cron expressions for scheduling tasks."
+        description="Generate and describe cron expressions for scheduling tasks. Includes presets, human-readable descriptions, and calculates the next 5 scheduled run times."
         breadcrumbs={[
           { label: "Home", href: "/" },
           { label: "Tools", href: "/" },

@@ -1,6 +1,7 @@
 "use client";
 
 import { useState, useCallback } from "react";
+import SEOHead from "@/components/seo/SEOHead";
 import ToolLayout from "@/components/layout/ToolLayout";
 import Button from "@/components/ui/Button";
 import Toast from "@/components/ui/Toast";
@@ -107,9 +108,15 @@ export default function RegexTesterPage() {
 
   return (
     <>
+      <SEOHead
+        title="Regex Tester - Free Online Tool"
+        description="Test regular expressions with live matching, highlighting, and capture groups. Free online regex tester for JavaScript, Python, and other languages."
+        keywords="regex tester, regular expression tester, regex test, regex matcher, regex online"
+        canonical="https://sudheertools.github.io/regex-tester"
+      />
       <ToolLayout
         title="Regex Tester"
-        description="Test regular expressions with live matching and highlighting."
+        description="Test regular expressions with live matching, match highlighting, and capture group extraction. Supports global, case-insensitive, multiline, and dotAll flags."
         breadcrumbs={[
           { label: "Home", href: "/" },
           { label: "Tools", href: "/" },

@@ -7,6 +7,7 @@ import Button from "@/components/ui/Button";
 import Toast from "@/components/ui/Toast";
 import RelatedTools from "@/components/tools/RelatedTools";
 import ToolInfo from "@/components/tools/ToolInfo";
+import SEOHead from "@/components/seo/SEOHead";
 import { encodeURL } from "@/lib/tools/url";
 import { copyToClipboard } from "@/lib/utils";
 
@@ -51,9 +52,15 @@ export default function URLEncodePage() {
 
   return (
     <>
+      <SEOHead
+        title="URL Encoder - Free Online Tool"
+        description="Encode text for safe use in URLs and query parameters instantly. Free online URL encoder with support for special characters. Fast and secure."
+        keywords="url encoder, encode url, url encode online, percent encoding, free url tool"
+        canonical="https://sudheertools.github.io/url-encode"
+      />
       <ToolLayout
         title="URL Encoder"
-        description="Encode text for safe use in URLs and query parameters."
+        description="Encode text for safe use in URLs and query parameters instantly. Our free online URL encoder converts special characters to percent-encoded format. All processing happens locally in your browser."
         breadcrumbs={[
           { label: "Home", href: "/" },
           { label: "Tools", href: "/" },

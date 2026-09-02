@@ -1,6 +1,7 @@
 "use client";
 
 import { useState } from "react";
+import SEOHead from "@/components/seo/SEOHead";
 import ToolLayout from "@/components/layout/ToolLayout";
 import TextArea from "@/components/ui/TextArea";
 import Button from "@/components/ui/Button";
@@ -50,9 +51,15 @@ export default function URLDecodePage() {
 
   return (
     <>
+      <SEOHead
+        title="URL Decoder - Free Online Tool"
+        description="Decode URL-encoded strings back to readable text instantly. Free online URL decoder for percent-encoded URLs, form data, and query parameters. Fast, private, and secure."
+        keywords="url decoder, url decode, percent decode, url encoded string, decode url online"
+        canonical="https://sudheertools.github.io/url-decode"
+      />
       <ToolLayout
         title="URL Decoder"
-        description="Decode URL-encoded text back to readable format."
+        description="Decode URL-encoded (percent-encoded) strings back to their original readable format. Supports standard percent encoding used in web URLs and form submissions."
         breadcrumbs={[
           { label: "Home", href: "/" },
           { label: "Tools", href: "/" },

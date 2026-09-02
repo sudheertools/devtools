@@ -1,13 +1,13 @@
 "use client";
 
 import { useState } from "react";
-import type { Metadata } from "next";
 import ToolLayout from "@/components/layout/ToolLayout";
 import TextArea from "@/components/ui/TextArea";
 import Button from "@/components/ui/Button";
 import Toast from "@/components/ui/Toast";
 import RelatedTools from "@/components/tools/RelatedTools";
 import ToolInfo from "@/components/tools/ToolInfo";
+import SEOHead from "@/components/seo/SEOHead";
 import { encodeBase64 } from "@/lib/tools/base64";
 import { copyToClipboard } from "@/lib/utils";
 import Link from "next/link";
@@ -118,9 +118,15 @@ export default function Base64EncodePage() {
 
   return (
     <>
+      <SEOHead
+        title="Base64 Encoder - Free Online Tool"
+        description="Encode text to Base64 format instantly. Free online Base64 encoder with Unicode support. Fast, private, and secure - no data leaves your browser."
+        keywords="base64 encoder, encode text to base64, base64 converter, online base64, free base64 tool"
+        canonical="https://sudheertools.github.io/base64-encode"
+      />
       <ToolLayout
         title="Base64 Encoder"
-        description="Encode any text to Base64 format. Supports Unicode characters including emojis."
+        description="Encode any text to Base64 format instantly. Our free online Base64 encoder supports Unicode characters including emojis and special characters. All processing happens locally in your browser - your data never leaves your device."
         breadcrumbs={[
           { label: "Home", href: "/" },
           { label: "Tools", href: "/" },

@@ -1,6 +1,7 @@
 "use client";
 
 import { useState } from "react";
+import SEOHead from "@/components/seo/SEOHead";
 import ToolLayout from "@/components/layout/ToolLayout";
 import TextArea from "@/components/ui/TextArea";
 import Button from "@/components/ui/Button";
@@ -58,9 +59,15 @@ export default function URLParserPage() {
 
   return (
     <>
+      <SEOHead
+        title="URL Parser - Free Online Tool"
+        description="Parse URLs to extract protocol, hostname, port, path, and query parameters. Free online URL parser and analyzer for web development and debugging."
+        keywords="url parser, url analyzer, parse url, extract query parameters, url breakdown"
+        canonical="https://sudheertools.github.io/url-parser"
+      />
       <ToolLayout
         title="URL Parser"
-        description="Parse URLs to see protocol, hostname, path, and query parameters."
+        description="Parse and analyze URLs to extract protocol, hostname, port, pathname, search parameters, and hash components. Perfect for debugging and web development."
         breadcrumbs={[
           { label: "Home", href: "/" },
           { label: "Tools", href: "/" },

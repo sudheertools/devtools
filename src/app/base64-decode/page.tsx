@@ -7,6 +7,7 @@ import Button from "@/components/ui/Button";
 import Toast from "@/components/ui/Toast";
 import RelatedTools from "@/components/tools/RelatedTools";
 import ToolInfo from "@/components/tools/ToolInfo";
+import SEOHead from "@/components/seo/SEOHead";
 import { decodeBase64 } from "@/lib/tools/base64";
 import { copyToClipboard } from "@/lib/utils";
 import Link from "next/link";
@@ -120,9 +121,15 @@ export default function Base64DecodePage() {
 
   return (
     <>
+      <SEOHead
+        title="Base64 Decoder - Free Online Tool"
+        description="Decode Base64 encoded text back to readable format instantly. Free online Base64 decoder with Unicode support. Fast, private, and secure."
+        keywords="base64 decoder, decode base64, base64 to text, online base64 decoder, free base64 tool"
+        canonical="https://sudheertools.github.io/base64-decode"
+      />
       <ToolLayout
         title="Base64 Decoder"
-        description="Decode Base64 encoded text back to plain text. Supports Unicode characters."
+        description="Decode Base64 encoded text back to readable format instantly. Our free online Base64 decoder supports Unicode characters including emojis. All processing happens locally in your browser - your data never leaves your device."
         breadcrumbs={[
           { label: "Home", href: "/" },
           { label: "Tools", href: "/" },

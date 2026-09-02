@@ -1,6 +1,7 @@
 "use client";
 
 import { useState, useCallback } from "react";
+import SEOHead from "@/components/seo/SEOHead";
 import ToolLayout from "@/components/layout/ToolLayout";
 import Button from "@/components/ui/Button";
 import Toast from "@/components/ui/Toast";
@@ -83,9 +84,15 @@ export default function TimestampConverterPage() {
 
   return (
     <>
+      <SEOHead
+        title="Timestamp Converter - Free Online Tool"
+        description="Convert Unix timestamps to human-readable dates and vice versa. Free online timestamp converter for seconds and milliseconds with date formatting."
+        keywords="timestamp converter, unix timestamp, epoch converter, date to timestamp, timestamp to date"
+        canonical="https://sudheertools.github.io/timestamp-converter"
+      />
       <ToolLayout
         title="Timestamp Converter"
-        description="Convert Unix timestamps to human-readable dates and vice versa."
+        description="Convert Unix timestamps (seconds and milliseconds) to human-readable dates and vice versa. Supports current timestamp display and multiple date formats."
         breadcrumbs={[
           { label: "Home", href: "/" },
           { label: "Tools", href: "/" },

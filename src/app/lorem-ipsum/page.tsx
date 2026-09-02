@@ -1,6 +1,7 @@
 "use client";
 
 import { useState } from "react";
+import SEOHead from "@/components/seo/SEOHead";
 import ToolLayout from "@/components/layout/ToolLayout";
 import TextArea from "@/components/ui/TextArea";
 import Button from "@/components/ui/Button";
@@ -52,9 +53,15 @@ export default function LoremIpsumPage() {
 
   return (
     <>
+      <SEOHead
+        title="Lorem Ipsum Generator - Free Online Tool"
+        description="Generate Lorem Ipsum placeholder text for designs, mockups, and layouts. Free online lorem ipsum generator with paragraphs, sentences, and words options."
+        keywords="lorem ipsum, placeholder text, dummy text, filler text, lorem ipsum generator"
+        canonical="https://sudheertools.github.io/lorem-ipsum"
+      />
       <ToolLayout
         title="Lorem Ipsum Generator"
-        description="Generate placeholder text for your designs and mockups."
+        description="Generate Lorem Ipsum placeholder text in paragraphs, sentences, or words for use in design mockups, layouts, and content prototypes."
         breadcrumbs={[
           { label: "Home", href: "/" },
           { label: "Tools", href: "/" },

@@ -1,6 +1,7 @@
 "use client";
 
 import { useState, useCallback } from "react";
+import SEOHead from "@/components/seo/SEOHead";
 import ToolLayout from "@/components/layout/ToolLayout";
 import Button from "@/components/ui/Button";
 import Toast from "@/components/ui/Toast";
@@ -38,9 +39,15 @@ export default function RandomColorPage() {
 
   return (
     <>
+      <SEOHead
+        title="Random Color Generator - Free Online Tool"
+        description="Generate random colors and color palettes for web design and development. Free online random color generator with HEX, RGB, and HSL color formats."
+        keywords="random color generator, color palette, random hex color, color picker, design colors"
+        canonical="https://sudheertools.github.io/random-color"
+      />
       <ToolLayout
         title="Random Color Generator"
-        description="Generate random colors and color palettes for your designs."
+        description="Generate random colors with HEX, RGB, and HSL values for web design and development. Click any color to create complementary color palettes."
         breadcrumbs={[
           { label: "Home", href: "/" },
           { label: "Tools", href: "/" },

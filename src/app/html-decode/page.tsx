@@ -1,6 +1,7 @@
 "use client";
 
 import { useState } from "react";
+import SEOHead from "@/components/seo/SEOHead";
 import ToolLayout from "@/components/layout/ToolLayout";
 import TextArea from "@/components/ui/TextArea";
 import Button from "@/components/ui/Button";
@@ -50,9 +51,15 @@ export default function HTMLDecodePage() {
 
   return (
     <>
+      <SEOHead
+        title="HTML Decoder - Free Online Tool"
+        description="Decode HTML entities back to readable text instantly. Free online HTML decoder for converting named entities, numeric references, and escaped characters."
+        keywords="html decoder, html decode, html entities, decode html, unescape html"
+        canonical="https://sudheertools.github.io/html-decode"
+      />
       <ToolLayout
         title="HTML Decoder"
-        description="Decode HTML entities back to readable text."
+        description="Decode HTML entities and character references back to their original readable text. Supports named entities (&amp;lt;), numeric references (&#60;), and escaped characters."
         breadcrumbs={[
           { label: "Home", href: "/" },
           { label: "Tools", href: "/" },

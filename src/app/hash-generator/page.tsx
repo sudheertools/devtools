@@ -1,6 +1,7 @@
 "use client";
 
 import { useState } from "react";
+import SEOHead from "@/components/seo/SEOHead";
 import ToolLayout from "@/components/layout/ToolLayout";
 import TextArea from "@/components/ui/TextArea";
 import Button from "@/components/ui/Button";
@@ -60,9 +61,15 @@ export default function HashGeneratorPage() {
 
   return (
     <>
+      <SEOHead
+        title="Hash Generator - Free Online Tool"
+        description="Generate SHA-1, SHA-256, and SHA-512 cryptographic hashes from any text input. Free online hash generator for data integrity and security verification."
+        keywords="hash generator, sha256, sha512, sha1, cryptographic hash, online hash tool"
+        canonical="https://sudheertools.github.io/hash-generator"
+      />
       <ToolLayout
         title="Hash Generator"
-        description="Generate SHA-1, SHA-256, and SHA-512 hashes from any text."
+        description="Generate cryptographic hash values (SHA-1, SHA-256, SHA-512) from any text input. Useful for data integrity verification, password hashing, and digital signatures."
         breadcrumbs={[
           { label: "Home", href: "/" },
           { label: "Tools", href: "/" },

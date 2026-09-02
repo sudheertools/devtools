@@ -1,6 +1,7 @@
 "use client";
 
 import { useState } from "react";
+import SEOHead from "@/components/seo/SEOHead";
 import ToolLayout from "@/components/layout/ToolLayout";
 import TextArea from "@/components/ui/TextArea";
 import Button from "@/components/ui/Button";
@@ -70,9 +71,15 @@ export default function CaseConverterPage() {
 
   return (
     <>
+      <SEOHead
+        title="Case Converter - Free Online Tool"
+        description="Convert text between camelCase, snake_case, kebab-case, PascalCase, and more. Free online case converter for developers and writers."
+        keywords="case converter, camel case, snake case, kebab case, pascal case, text case converter"
+        canonical="https://sudheertools.github.io/case-converter"
+      />
       <ToolLayout
         title="Case Converter"
-        description="Convert text between camelCase, snake_case, kebab-case, and more."
+        description="Convert text between multiple case formats including camelCase, snake_case, kebab-case, PascalCase, UPPER CASE, lower case, and more with instant results."
         breadcrumbs={[
           { label: "Home", href: "/" },
           { label: "Tools", href: "/" },

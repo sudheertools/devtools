@@ -1,6 +1,7 @@
 "use client";
 
 import { useState, useCallback } from "react";
+import SEOHead from "@/components/seo/SEOHead";
 import ToolLayout from "@/components/layout/ToolLayout";
 import TextArea from "@/components/ui/TextArea";
 import Button from "@/components/ui/Button";
@@ -52,9 +53,15 @@ Lines: ${stats.lines}`;
 
   return (
     <>
+      <SEOHead
+        title="Character Counter - Free Online Tool"
+        description="Count characters, words, sentences, paragraphs, and lines in text instantly. Free online character counter and word counter for writers and developers."
+        keywords="character counter, word counter, text counter, character count, word count online"
+        canonical="https://sudheertools.github.io/character-counter"
+      />
       <ToolLayout
         title="Character Counter"
-        description="Count characters, words, sentences, and lines in text."
+        description="Count characters, words, sentences, paragraphs, and lines in any text. Real-time statistics with character count (with and without spaces) for content analysis."
         breadcrumbs={[
           { label: "Home", href: "/" },
           { label: "Tools", href: "/" },

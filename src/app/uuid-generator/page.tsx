@@ -1,6 +1,7 @@
 "use client";
 
 import { useState, useCallback } from "react";
+import SEOHead from "@/components/seo/SEOHead";
 import ToolLayout from "@/components/layout/ToolLayout";
 import Button from "@/components/ui/Button";
 import Toast from "@/components/ui/Toast";
@@ -55,9 +56,15 @@ export default function UUIDGeneratorPage() {
 
   return (
     <>
+      <SEOHead
+        title="UUID Generator - Free Online Tool"
+        description="Generate random UUID v4 identifiers instantly. Free online UUID generator for applications, databases, and more. Fast, private, and secure."
+        keywords="uuid generator, generate uuid, uuid v4, random uuid, online uuid tool"
+        canonical="https://sudheertools.github.io/uuid-generator"
+      />
       <ToolLayout
         title="UUID Generator"
-        description="Generate random UUID v4 identifiers for your applications."
+        description="Generate random UUID v4 (Universally Unique Identifier) strings for use in databases, APIs, and applications. Includes built-in UUID validation."
         breadcrumbs={[
           { label: "Home", href: "/" },
           { label: "Tools", href: "/" },

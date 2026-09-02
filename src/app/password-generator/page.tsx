@@ -1,6 +1,7 @@
 "use client";
 
 import { useState, useCallback } from "react";
+import SEOHead from "@/components/seo/SEOHead";
 import ToolLayout from "@/components/layout/ToolLayout";
 import Button from "@/components/ui/Button";
 import Toast from "@/components/ui/Toast";
@@ -43,9 +44,15 @@ export default function PasswordGeneratorPage() {
 
   return (
     <>
+      <SEOHead
+        title="Password Generator - Free Online Tool"
+        description="Generate strong, random passwords with customizable length and character options. Free online password generator with strength indicator for secure passwords."
+        keywords="password generator, random password, strong password, secure password, password strength"
+        canonical="https://sudheertools.github.io/password-generator"
+      />
       <ToolLayout
         title="Password Generator"
-        description="Generate strong, random passwords with customizable options."
+        description="Generate strong, random passwords with customizable options including length, uppercase, lowercase, numbers, and symbols. Includes real-time password strength analysis."
         breadcrumbs={[
           { label: "Home", href: "/" },
           { label: "Tools", href: "/" },

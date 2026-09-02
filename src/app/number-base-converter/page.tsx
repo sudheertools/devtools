@@ -1,6 +1,7 @@
 "use client";
 
 import { useState } from "react";
+import SEOHead from "@/components/seo/SEOHead";
 import ToolLayout from "@/components/layout/ToolLayout";
 import Button from "@/components/ui/Button";
 import Toast from "@/components/ui/Toast";
@@ -63,9 +64,15 @@ export default function NumberBaseConverterPage() {
 
   return (
     <>
+      <SEOHead
+        title="Number Base Converter - Free Online Tool"
+        description="Convert numbers between Binary, Octal, Decimal, and Hexadecimal instantly. Free online number base converter for developers and students."
+        keywords="number base converter, binary converter, hex converter, octal converter, decimal converter"
+        canonical="https://sudheertools.github.io/number-base-converter"
+      />
       <ToolLayout
         title="Number Base Converter"
-        description="Convert between Binary, Octal, Decimal, and Hexadecimal."
+        description="Convert numbers between Binary (base 2), Octal (base 8), Decimal (base 10), and Hexadecimal (base 16) number systems with instant results."
         breadcrumbs={[
           { label: "Home", href: "/" },
           { label: "Tools", href: "/" },

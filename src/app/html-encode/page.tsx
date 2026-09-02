@@ -1,6 +1,7 @@
 "use client";
 
 import { useState } from "react";
+import SEOHead from "@/components/seo/SEOHead";
 import ToolLayout from "@/components/layout/ToolLayout";
 import TextArea from "@/components/ui/TextArea";
 import Button from "@/components/ui/Button";
@@ -50,9 +51,15 @@ export default function HTMLEncodePage() {
 
   return (
     <>
+      <SEOHead
+        title="HTML Encoder - Free Online Tool"
+        description="Encode special characters to HTML entities instantly. Free online HTML encoder for escaping quotes, brackets, and special characters for safe HTML output."
+        keywords="html encoder, html encode, html entities, escape html, encode special characters"
+        canonical="https://sudheertools.github.io/html-encode"
+      />
       <ToolLayout
         title="HTML Encoder"
-        description="Encode special characters for safe use in HTML."
+        description="Encode special characters to their corresponding HTML entities for safe use in HTML documents. Converts characters like <, >, &, and quotes to their entity equivalents."
         breadcrumbs={[
           { label: "Home", href: "/" },
           { label: "Tools", href: "/" },
