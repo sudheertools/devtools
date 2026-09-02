@@ -1,4 +1,5 @@
 import Link from "next/link";
+import AdBanner from "@/components/ui/AdBanner";
 
 interface BreadcrumbItem {
   label: string;
@@ -65,7 +66,13 @@ export default function ToolLayout({
         </p>
       </header>
 
+      <AdBanner format="horizontal" />
+
       {children}
+
+      <div className="mt-8">
+        <AdBanner format="horizontal" />
+      </div>
     </div>
   );
 }

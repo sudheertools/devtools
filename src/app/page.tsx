@@ -3,6 +3,7 @@ import { tools } from "@/lib/tools/registry";
 import SearchBar from "@/components/ui/SearchBar";
 import ToolCard from "@/components/tools/ToolCard";
 import ThemeToggle from "@/components/layout/ThemeToggle";
+import HomeAds from "@/components/tools/HomeAds";
 
 export const metadata: Metadata = {
   title: "DevTools - Free Online Developer Tools",
@@ -33,6 +34,8 @@ export default function HomePage() {
         <div className="mt-8">
           <SearchBar />
         </div>
+
+        <HomeAds />
       </section>
 
       <section id="tools" className="mt-16">
