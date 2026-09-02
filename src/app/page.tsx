@@ -1,17 +1,44 @@
-import type { Metadata } from "next";
-import { tools } from "@/lib/tools/registry";
-import SearchBar from "@/components/ui/SearchBar";
+"use client";
+
+import { useState, useMemo } from "react";
+import { tools, categories } from "@/lib/tools/registry";
+import type { Tool } from "@/lib/tools/registry";
 import ToolCard from "@/components/tools/ToolCard";
 import ThemeToggle from "@/components/layout/ThemeToggle";
 import HomeAds from "@/components/tools/HomeAds";
 
-export const metadata: Metadata = {
-  title: "DevTools - Free Online Developer Tools",
-  description:
-    "Free online developer tools that run entirely in your browser. No data leaves your device. Fast, private, and secure.",
-};
-
 export default function HomePage() {
+  const [searchQuery, setSearchQuery] = useState("");
+  const [selectedCategory, setSelectedCategory] = useState("all");
+
+  const filteredTools = useMemo(() => {
+    let result = tools;
+
+    if (selectedCategory !== "all") {
+      result = result.filter((tool) => tool.category === selectedCategory);
+    }
+
+    if (searchQuery.trim()) {
+      const query = searchQuery.toLowerCase();
+      result = result.filter(
+        (tool) =>
+          tool.name.toLowerCase().includes(query) ||
+          tool.description.toLowerCase().includes(query) ||
+          tool.category.toLowerCase().includes(query)
+      );
+    }
+
+    return result;
+  }, [searchQuery, selectedCategory]);
+
+  const categoryCounts = useMemo(() => {
+    const counts: Record<string, number> = { all: tools.length };
+    categories.forEach((cat) => {
+      counts[cat.slug] = tools.filter((t) => t.category === cat.slug).length;
+    });
+    return counts;
+  }, []);
+
   return (
     <div className="mx-auto max-w-6xl px-4 py-12 sm:px-6 sm:py-20">
       <div className="flex justify-end">
@@ -30,23 +57,144 @@ export default function HomePage() {
           A collection of free, fast, and secure developer tools. Your data
           never leaves your browser — everything runs locally on your device.
         </p>
+      </section>
 
-        <div className="mt-8">
-          <SearchBar />
+      <section className="mt-10">
+        <div className="mx-auto max-w-3xl">
+          <div className="relative">
+            <svg
+              className="absolute left-4 top-1/2 h-5 w-5 -translate-y-1/2 text-gray-400"
+              fill="none"
+              stroke="currentColor"
+              viewBox="0 0 24 24"
+            >
+              <path
+                strokeLinecap="round"
+                strokeLinejoin="round"
+                strokeWidth={2}
+                d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"
+              />
+            </svg>
+            <input
+              type="text"
+              value={searchQuery}
+              onChange={(e) => setSearchQuery(e.target.value)}
+              placeholder={`Search ${tools.length} tools, try "json", "base64", "url"...`}
+              className="w-full rounded-xl border border-gray-200 bg-white py-4 pl-12 pr-4 text-base text-gray-900 placeholder-gray-400 shadow-sm transition-shadow focus:border-blue-500 focus:outline-none focus:ring-2 focus:ring-blue-500/20 focus:shadow-md dark:border-gray-700 dark:bg-gray-800 dark:text-gray-100 dark:placeholder-gray-500 dark:focus:border-blue-400"
+            />
+            {searchQuery && (
+              <button
+                onClick={() => setSearchQuery("")}
+                className="absolute right-4 top-1/2 -translate-y-1/2 text-gray-400 hover:text-gray-600 dark:hover:text-gray-300"
+              >
+                <svg
+                  className="h-5 w-5"
+                  fill="none"
+                  stroke="currentColor"
+                  viewBox="0 0 24 24"
+                >
+                  <path
+                    strokeLinecap="round"
+                    strokeLinejoin="round"
+                    strokeWidth={2}
+                    d="M6 18L18 6M6 6l12 12"
+                  />
+                </svg>
+              </button>
+            )}
+          </div>
+
+          <div className="mt-4 flex flex-wrap justify-center gap-2">
+            <button
+              onClick={() => setSelectedCategory("all")}
+              className={`rounded-full px-4 py-2 text-sm font-medium transition-all ${
+                selectedCategory === "all"
+                  ? "bg-blue-600 text-white shadow-md"
+                  : "bg-gray-100 text-gray-600 hover:bg-gray-200 dark:bg-gray-800 dark:text-gray-400 dark:hover:bg-gray-700"
+              }`}
+            >
+              All
+              <span className="ml-1.5 text-xs opacity-75">
+                {categoryCounts.all}
+              </span>
+            </button>
+            {categories.map((category) => (
+              <button
+                key={category.slug}
+                onClick={() => setSelectedCategory(category.slug)}
+                className={`rounded-full px-4 py-2 text-sm font-medium transition-all ${
+                  selectedCategory === category.slug
+                    ? "bg-blue-600 text-white shadow-md"
+                    : "bg-gray-100 text-gray-600 hover:bg-gray-200 dark:bg-gray-800 dark:text-gray-400 dark:hover:bg-gray-700"
+                }`}
+              >
+                {category.name}
+                <span className="ml-1.5 text-xs opacity-75">
+                  {categoryCounts[category.slug]}
+                </span>
+              </button>
+            ))}
+          </div>
         </div>
 
         <HomeAds />
       </section>
 
-      <section id="tools" className="mt-16">
-        <h2 className="mb-6 text-center text-2xl font-bold text-gray-900 dark:text-white">
-          Popular Tools
-        </h2>
-        <div className="grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
-          {tools.map((tool) => (
-            <ToolCard key={tool.slug} tool={tool} />
-          ))}
+      <section id="tools" className="mt-10">
+        <div className="mb-6 flex items-center justify-between">
+          <p className="text-sm text-gray-500 dark:text-gray-400">
+            {filteredTools.length === tools.length
+              ? `${tools.length} tools`
+              : `${filteredTools.length} of ${tools.length} tools`}
+          </p>
+          {(searchQuery || selectedCategory !== "all") && (
+            <button
+              onClick={() => {
+                setSearchQuery("");
+                setSelectedCategory("all");
+              }}
+              className="text-sm text-blue-600 hover:text-blue-700 dark:text-blue-400 dark:hover:text-blue-300"
+            >
+              Clear filters
+            </button>
+          )}
         </div>
+
+        {filteredTools.length > 0 ? (
+          <div className="grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
+            {filteredTools.map((tool) => (
+              <ToolCard key={tool.slug} tool={tool} />
+            ))}
+          </div>
+        ) : (
+          <div className="rounded-xl border border-gray-200 bg-gray-50 py-12 text-center dark:border-gray-700 dark:bg-gray-800">
+            <svg
+              className="mx-auto h-12 w-12 text-gray-400"
+              fill="none"
+              stroke="currentColor"
+              viewBox="0 0 24 24"
+            >
+              <path
+                strokeLinecap="round"
+                strokeLinejoin="round"
+                strokeWidth={2}
+                d="M9.172 16.172a4 4 0 015.656 0M9 10h.01M15 10h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z"
+              />
+            </svg>
+            <p className="mt-4 text-gray-500 dark:text-gray-400">
+              No tools found for &ldquo;{searchQuery}&rdquo;
+            </p>
+            <button
+              onClick={() => {
+                setSearchQuery("");
+                setSelectedCategory("all");
+              }}
+              className="mt-4 text-sm text-blue-600 hover:text-blue-700 dark:text-blue-400 dark:hover:text-blue-300"
+            >
+              Clear filters
+            </button>
+          </div>
+        )}
       </section>
 
       <section className="mt-20 rounded-2xl border border-gray-200 bg-gray-50 p-8 text-center dark:border-gray-800 dark:bg-gray-900">
