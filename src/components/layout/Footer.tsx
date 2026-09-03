@@ -1,12 +1,5 @@
 import Link from "next/link";
-
-const toolCategories = [
-  { name: "Encoding", href: "/#tools" },
-  { name: "Formatting", href: "/#tools" },
-  { name: "Conversion", href: "/#tools" },
-  { name: "Generation", href: "/#tools" },
-  { name: "Validation", href: "/#tools" },
-];
+import { tools, categories } from "@/lib/tools/registry";
 
 const popularTools = [
   { name: "JSON Formatter", href: "/json-formatter" },
@@ -17,6 +10,9 @@ const popularTools = [
 ];
 
 export default function Footer() {
+  const toolCount = tools.length;
+  const topCategories = categories.slice(0, 5);
+
   return (
     <footer className="border-t border-gray-200 bg-gray-50 dark:border-gray-800 dark:bg-gray-900">
       <div className="mx-auto max-w-6xl px-4 py-12 sm:px-6">
@@ -29,8 +25,8 @@ export default function Footer() {
               DevTools
             </div>
             <p className="mt-3 text-sm text-gray-500 dark:text-gray-400">
-              58 free developer tools that run entirely in your browser. No
-              signup, no data sent to servers.
+              {toolCount} free developer tools that run entirely in your browser.
+              No signup, no data sent to servers.
             </p>
           </div>
 
@@ -57,10 +53,10 @@ export default function Footer() {
               Categories
             </h3>
             <ul className="mt-3 space-y-2">
-              {toolCategories.map((cat) => (
-                <li key={cat.href}>
+              {topCategories.map((cat) => (
+                <li key={cat.slug}>
                   <Link
-                    href={cat.href}
+                    href="/#tools"
                     className="text-sm text-gray-500 hover:text-gray-700 dark:text-gray-400 dark:hover:text-gray-200"
                   >
                     {cat.name}
@@ -90,7 +86,7 @@ export default function Footer() {
         </div>
 
         <div className="mt-8 border-t border-gray-200 pt-6 text-center text-xs text-gray-400 dark:border-gray-800 dark:text-gray-500">
-          <p>&copy; {new Date().getFullYear()} DevTools. All tools are free and open-source.</p>
+          <p>&copy; {new Date().getFullYear()} DevTools. All {toolCount} tools are free and open-source.</p>
         </div>
       </div>
     </footer>

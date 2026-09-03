@@ -2,7 +2,6 @@
 
 import { useState, useMemo } from "react";
 import { tools, categories } from "@/lib/tools/registry";
-import type { Tool } from "@/lib/tools/registry";
 import ToolCard from "@/components/tools/ToolCard";
 import ThemeToggle from "@/components/layout/ThemeToggle";
 import HomeAds from "@/components/tools/HomeAds";
@@ -51,12 +50,14 @@ export default function HomePage() {
           All processing happens in your browser
         </div>
         <h1 className="text-4xl font-bold tracking-tight text-gray-900 dark:text-white sm:text-5xl">
-          69 Free Developer Tools
+          {tools.length} Free Developer Tools — Private, Browser-Based, No Signup
         </h1>
-        <p className="mx-auto mt-4 max-w-2xl text-lg text-gray-600 dark:text-gray-400">
-          Base64, JSON, UUID, regex, password generator, and more. All tools run
-          100% in your browser — no server uploads, no signups, no tracking. Your
-          data stays on your device.
+        <p className="mx-auto mt-4 max-w-3xl text-lg text-gray-600 dark:text-gray-400">
+          Every tool runs entirely in your browser. Your API keys, JWT tokens,
+          JSON payloads, and passwords never leave your device — no server
+          uploads, no tracking, no risk. Format JSON, encode Base64, generate
+          UUIDs, test regex, and {tools.length - 5} more tools — all free, all
+          private.
         </p>
       </section>
 
@@ -362,6 +363,134 @@ export default function HomePage() {
               View source on any tool. Every function runs client-side JavaScript
               you can verify.
             </p>
+          </div>
+        </div>
+      </section>
+
+      <section className="mt-16">
+        <div className="mx-auto max-w-4xl">
+          <h2 className="text-center text-2xl font-bold text-gray-900 dark:text-white">
+            How It Works
+          </h2>
+          <p className="mx-auto mt-3 max-w-2xl text-center text-gray-600 dark:text-gray-400">
+            Every tool runs entirely in your browser using client-side
+            JavaScript. Your data never touches a server.
+          </p>
+          <div className="mt-8 grid gap-6 sm:grid-cols-3">
+            <div className="rounded-xl border border-gray-200 bg-white p-6 text-center dark:border-gray-700 dark:bg-gray-800">
+              <div className="mx-auto mb-3 flex h-10 w-10 items-center justify-center rounded-full bg-blue-100 text-blue-700 dark:bg-blue-900/50 dark:text-blue-300">
+                <span className="text-sm font-bold">1</span>
+              </div>
+              <h3 className="font-semibold text-gray-900 dark:text-white">
+                Paste Your Data
+              </h3>
+              <p className="mt-1 text-sm text-gray-500 dark:text-gray-400">
+                Enter JSON, text, or any input into the tool. Works with API
+                keys, JWT tokens, and sensitive data.
+              </p>
+            </div>
+            <div className="rounded-xl border border-gray-200 bg-white p-6 text-center dark:border-gray-700 dark:bg-gray-800">
+              <div className="mx-auto mb-3 flex h-10 w-10 items-center justify-center rounded-full bg-green-100 text-green-700 dark:bg-green-900/50 dark:text-green-300">
+                <span className="text-sm font-bold">2</span>
+              </div>
+              <h3 className="font-semibold text-gray-900 dark:text-white">
+                Process Instantly
+              </h3>
+              <p className="mt-1 text-sm text-gray-500 dark:text-gray-400">
+                The tool processes your data using JavaScript and the Web Crypto
+                API. No network requests are made.
+              </p>
+            </div>
+            <div className="rounded-xl border border-gray-200 bg-white p-6 text-center dark:border-gray-700 dark:bg-gray-800">
+              <div className="mx-auto mb-3 flex h-10 w-10 items-center justify-center rounded-full bg-purple-100 text-purple-700 dark:bg-purple-900/50 dark:text-purple-300">
+                <span className="text-sm font-bold">3</span>
+              </div>
+              <h3 className="font-semibold text-gray-900 dark:text-white">
+                Copy the Result
+              </h3>
+              <p className="mt-1 text-sm text-gray-500 dark:text-gray-400">
+                Get your formatted, encoded, or generated output. Copy it
+                directly — nothing is stored or logged.
+              </p>
+            </div>
+          </div>
+          <p className="mt-6 text-center text-sm text-gray-500 dark:text-gray-400">
+            Open your browser&apos;s DevTools → Network tab → use any tool. You
+            will see zero outgoing requests. That&apos;s the proof.
+          </p>
+        </div>
+      </section>
+
+      <section className="mt-16">
+        <div className="mx-auto max-w-3xl">
+          <h2 className="text-center text-2xl font-bold text-gray-900 dark:text-white">
+            Frequently Asked Questions
+          </h2>
+          <div className="mt-8 space-y-4">
+            {[
+              {
+                q: "Is this really free?",
+                a: "Yes, completely free. No sign-up, no limits, no premium tier. All 69 tools are available to everyone.",
+              },
+              {
+                q: "Does it collect my data?",
+                a: "No. Every tool runs entirely in your browser. No data is sent to any server. You can verify this by opening your browser's DevTools Network tab — you'll see zero outgoing requests.",
+              },
+              {
+                q: "Can I use it offline?",
+                a: "Yes. Once the page is loaded, all tools work offline. No internet connection is required for processing.",
+              },
+              {
+                q: "Which browsers are supported?",
+                a: "All modern browsers: Chrome, Firefox, Safari, Edge. The tools use standard Web APIs (Web Crypto, FileReader, etc.) that work across all major browsers.",
+              },
+              {
+                q: "How is this different from other tool sites?",
+                a: "Most developer tool sites send your data to their servers for processing. Ours never does. This makes DevTools safe for sensitive data like API keys, JWT tokens, passwords, and proprietary code.",
+              },
+            ].map((item, i) => (
+              <div
+                key={i}
+                className="rounded-xl border border-gray-200 bg-white p-5 dark:border-gray-700 dark:bg-gray-800"
+              >
+                <h3 className="font-semibold text-gray-900 dark:text-white">
+                  {item.q}
+                </h3>
+                <p className="mt-2 text-sm text-gray-600 dark:text-gray-400">
+                  {item.a}
+                </p>
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      <section className="mt-16">
+        <div className="mx-auto max-w-3xl text-center">
+          <h2 className="text-2xl font-bold text-gray-900 dark:text-white">
+            Standards & References
+          </h2>
+          <p className="mt-3 text-gray-600 dark:text-gray-400">
+            Our tools implement official standards. Learn more:
+          </p>
+          <div className="mt-6 flex flex-wrap justify-center gap-3">
+            {[
+              { name: "UUID (RFC 4122)", href: "https://datatracker.ietf.org/doc/html/rfc4122" },
+              { name: "JWT (RFC 7519)", href: "https://datatracker.ietf.org/doc/html/rfc7519" },
+              { name: "Base64 (RFC 4648)", href: "https://datatracker.ietf.org/doc/html/rfc4648" },
+              { name: "Web Crypto API", href: "https://developer.mozilla.org/en-US/docs/Web/API/Web_Crypto_API" },
+              { name: "JSON (ECMA-404)", href: "https://www.ecma-international.org/publications-and-standards/standards/ecma-404/" },
+            ].map((ref) => (
+              <a
+                key={ref.href}
+                href={ref.href}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="rounded-lg border border-gray-200 bg-white px-4 py-2 text-sm text-gray-700 transition-colors hover:border-blue-300 hover:text-blue-600 dark:border-gray-700 dark:bg-gray-800 dark:text-gray-300 dark:hover:border-blue-600 dark:hover:text-blue-400"
+              >
+                {ref.name}
+              </a>
+            ))}
           </div>
         </div>
       </section>

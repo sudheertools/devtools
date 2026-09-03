@@ -18,16 +18,16 @@ const geistMono = Geist_Mono({
 
 export const metadata: Metadata = {
   title: {
-    default: "69 Free Developer Tools — Browser-Based, No Signup | DevTools",
+    default: "69 Free Developer Tools — Private, Browser-Based | DevTools",
     template: "%s | DevTools",
   },
   description:
-    "69 free developer tools that run entirely in your browser. Base64, JSON, UUID, regex, password generator, and more. No signup. Your data never leaves your device.",
+    "69 free developer tools — JSON, Base64, UUID, regex, and more. 100% client-side, zero data uploads. No signup required.",
   metadataBase: new URL("https://sudheertools.github.io"),
   openGraph: {
-    title: "69 Free Developer Tools — Browser-Based, No Signup | DevTools",
+    title: "69 Free Developer Tools — Private, Browser-Based | DevTools",
     description:
-      "69 free developer tools that run entirely in your browser. Base64, JSON, UUID, regex, and more. No signup. Your data never leaves your device.",
+      "69 free developer tools — JSON, Base64, UUID, regex, and more. 100% client-side, zero data uploads. No signup required.",
     url: "https://sudheertools.github.io",
     siteName: "DevTools",
     images: [
@@ -42,9 +42,9 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: "summary_large_image",
-    title: "69 Free Developer Tools — Browser-Based, No Signup | DevTools",
+    title: "69 Free Developer Tools — Private, Browser-Based | DevTools",
     description:
-      "69 free developer tools that run entirely in your browser. Base64, JSON, UUID, regex, and more. No signup. Your data never leaves your device.",
+      "69 free developer tools — JSON, Base64, UUID, regex, and more. 100% client-side, zero data uploads. No signup required.",
     images: ["/og-image.png"],
   },
   robots: {
