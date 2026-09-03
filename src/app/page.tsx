@@ -51,12 +51,77 @@ export default function HomePage() {
           All processing happens in your browser
         </div>
         <h1 className="text-4xl font-bold tracking-tight text-gray-900 dark:text-white sm:text-5xl">
-          Free Online Developer Tools
+          58 Free Developer Tools
         </h1>
         <p className="mx-auto mt-4 max-w-2xl text-lg text-gray-600 dark:text-gray-400">
-          A collection of free, fast, and secure developer tools. Your data
-          never leaves your browser — everything runs locally on your device.
+          Base64, JSON, UUID, regex, password generator, and more. All tools run
+          100% in your browser — no server uploads, no signups, no tracking. Your
+          data stays on your device.
         </p>
+      </section>
+
+      <section className="mt-10">
+        <h2 className="mb-4 text-center text-sm font-semibold uppercase tracking-wider text-gray-500 dark:text-gray-400">
+          Popular Tools
+        </h2>
+        <div className="mx-auto grid max-w-3xl gap-3 sm:grid-cols-3">
+          {[
+            {
+              name: "JSON Formatter",
+              desc: "Format, validate, and beautify JSON",
+              href: "/json-formatter",
+              icon: "JSON",
+            },
+            {
+              name: "Base64 Encoder",
+              desc: "Encode text with Unicode support",
+              href: "/base64-encode",
+              icon: "ENC",
+            },
+            {
+              name: "UUID Generator",
+              desc: "Generate random UUID v4 identifiers",
+              href: "/uuid-generator",
+              icon: "UID",
+            },
+            {
+              name: "Password Generator",
+              desc: "Create strong, secure passwords",
+              href: "/password-generator",
+              icon: "PWD",
+            },
+            {
+              name: "Regex Tester",
+              desc: "Test regular expressions live",
+              href: "/regex-tester",
+              icon: "REG",
+            },
+            {
+              name: "Hash Generator",
+              desc: "MD5, SHA-1, SHA-256, SHA-512",
+              href: "/hash-generator",
+              icon: "HASH",
+            },
+          ].map((tool) => (
+            <a
+              key={tool.href}
+              href={tool.href}
+              className="flex items-center gap-3 rounded-xl border border-gray-200 bg-white p-4 transition-all hover:border-blue-300 hover:shadow-md dark:border-gray-700 dark:bg-gray-800 dark:hover:border-blue-600"
+            >
+              <span className="flex h-10 w-10 flex-shrink-0 items-center justify-center rounded-lg bg-blue-100 text-xs font-bold text-blue-700 dark:bg-blue-900/50 dark:text-blue-300">
+                {tool.icon}
+              </span>
+              <div className="min-w-0">
+                <p className="text-sm font-semibold text-gray-900 dark:text-white">
+                  {tool.name}
+                </p>
+                <p className="text-xs text-gray-500 dark:text-gray-400">
+                  {tool.desc}
+                </p>
+              </div>
+            </a>
+          ))}
+        </div>
       </section>
 
       <section className="mt-10">
@@ -201,7 +266,7 @@ export default function HomePage() {
         <h2 className="text-2xl font-bold text-gray-900 dark:text-white">
           Why DevTools?
         </h2>
-        <div className="mx-auto mt-6 grid max-w-3xl gap-6 sm:grid-cols-3">
+        <div className="mx-auto mt-6 grid max-w-4xl gap-6 sm:grid-cols-2 lg:grid-cols-4">
           <div>
             <div className="mx-auto mb-3 flex h-12 w-12 items-center justify-center rounded-xl bg-blue-100 text-blue-700 dark:bg-blue-900/50 dark:text-blue-300">
               <svg
@@ -272,6 +337,30 @@ export default function HomePage() {
             <p className="mt-1 text-sm text-gray-500 dark:text-gray-400">
               No sign-up required. No limits. Use all tools freely without any
               restrictions.
+            </p>
+          </div>
+          <div>
+            <div className="mx-auto mb-3 flex h-12 w-12 items-center justify-center rounded-xl bg-orange-100 text-orange-700 dark:bg-orange-900/50 dark:text-orange-300">
+              <svg
+                className="h-6 w-6"
+                fill="none"
+                stroke="currentColor"
+                viewBox="0 0 24 24"
+              >
+                <path
+                  strokeLinecap="round"
+                  strokeLinejoin="round"
+                  strokeWidth={2}
+                  d="M10 20l4-16m4 4l4 4-4 4M6 16l-4-4 4-4"
+                />
+              </svg>
+            </div>
+            <h3 className="font-semibold text-gray-900 dark:text-white">
+              Open & Auditable
+            </h3>
+            <p className="mt-1 text-sm text-gray-500 dark:text-gray-400">
+              View source on any tool. Every function runs client-side JavaScript
+              you can verify.
             </p>
           </div>
         </div>

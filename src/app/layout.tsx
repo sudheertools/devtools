@@ -18,11 +18,49 @@ const geistMono = Geist_Mono({
 
 export const metadata: Metadata = {
   title: {
-    default: "DevTools - Free Online Developer Tools",
+    default: "58 Free Developer Tools — Browser-Based, No Signup | DevTools",
     template: "%s | DevTools",
   },
   description:
-    "Free online developer tools that run entirely in your browser. No data leaves your device. Fast, private, and secure.",
+    "58 free developer tools that run entirely in your browser. Base64, JSON, UUID, regex, password generator, and more. No signup. Your data never leaves your device.",
+  metadataBase: new URL("https://sudheertools.github.io"),
+  openGraph: {
+    title: "58 Free Developer Tools — Browser-Based, No Signup | DevTools",
+    description:
+      "58 free developer tools that run entirely in your browser. Base64, JSON, UUID, regex, and more. No signup. Your data never leaves your device.",
+    url: "https://sudheertools.github.io",
+    siteName: "DevTools",
+    images: [
+      {
+        url: "/og-image.png",
+        width: 1200,
+        height: 630,
+        alt: "DevTools - Free Online Developer Tools",
+      },
+    ],
+    type: "website",
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "58 Free Developer Tools — Browser-Based, No Signup | DevTools",
+    description:
+      "58 free developer tools that run entirely in your browser. Base64, JSON, UUID, regex, and more. No signup. Your data never leaves your device.",
+    images: ["/og-image.png"],
+  },
+  robots: {
+    index: true,
+    follow: true,
+    googleBot: {
+      index: true,
+      follow: true,
+      "max-video-preview": -1,
+      "max-image-preview": "large",
+      "max-snippet": -1,
+    },
+  },
+  alternates: {
+    canonical: "https://sudheertools.github.io",
+  },
 };
 
 export default function RootLayout({
