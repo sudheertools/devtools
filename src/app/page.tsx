@@ -61,6 +61,33 @@ export default function HomePage() {
         </p>
       </section>
 
+      <div className="mt-8 flex flex-wrap items-center justify-center gap-6 text-sm text-gray-500 dark:text-gray-400">
+        <div className="flex items-center gap-2">
+          <svg className="h-4 w-4 text-green-500" fill="currentColor" viewBox="0 0 20 20">
+            <path fillRule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clipRule="evenodd" />
+          </svg>
+          Zero data uploads
+        </div>
+        <div className="flex items-center gap-2">
+          <svg className="h-4 w-4 text-green-500" fill="currentColor" viewBox="0 0 20 20">
+            <path fillRule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clipRule="evenodd" />
+          </svg>
+          No signup required
+        </div>
+        <div className="flex items-center gap-2">
+          <svg className="h-4 w-4 text-green-500" fill="currentColor" viewBox="0 0 20 20">
+            <path fillRule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clipRule="evenodd" />
+          </svg>
+          Works offline
+        </div>
+        <div className="flex items-center gap-2">
+          <svg className="h-4 w-4 text-green-500" fill="currentColor" viewBox="0 0 20 20">
+            <path fillRule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clipRule="evenodd" />
+          </svg>
+          Dark mode supported
+        </div>
+      </div>
+
       <section className="mt-10">
         <h2 className="mb-4 text-center text-sm font-semibold uppercase tracking-wider text-gray-500 dark:text-gray-400">
           Popular Tools
@@ -370,6 +397,79 @@ export default function HomePage() {
       <section className="mt-16">
         <div className="mx-auto max-w-4xl">
           <h2 className="text-center text-2xl font-bold text-gray-900 dark:text-white">
+            Built for Every Developer
+          </h2>
+          <p className="mx-auto mt-3 max-w-2xl text-center text-gray-600 dark:text-gray-400">
+            Whether you&apos;re debugging APIs, configuring infrastructure, or
+            working with AI — there&apos;s a tool for you.
+          </p>
+          <div className="mt-8 grid gap-6 sm:grid-cols-3">
+            <div className="rounded-xl border border-gray-200 bg-white p-6 dark:border-gray-700 dark:bg-gray-800">
+              <div className="mb-3 flex h-10 w-10 items-center justify-center rounded-lg bg-blue-100 text-blue-700 dark:bg-blue-900/50 dark:text-blue-300">
+                <svg className="h-5 w-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M10 20l4-16m4 4l4 4-4 4M6 16l-4-4 4-4" />
+                </svg>
+              </div>
+              <h3 className="font-semibold text-gray-900 dark:text-white">
+                For Developers
+              </h3>
+              <p className="mt-2 text-sm text-gray-500 dark:text-gray-400">
+                Format JSON, test regex, validate emails, encode Base64, convert
+                CSV, and debug API responses — all without leaving your browser.
+              </p>
+              <div className="mt-3 flex flex-wrap gap-1.5">
+                {["JSON Formatter", "Regex Tester", "JWT Decoder", "Diff Checker"].map((t) => (
+                  <span key={t} className="rounded-md bg-gray-100 px-2 py-1 text-xs text-gray-600 dark:bg-gray-700 dark:text-gray-400">{t}</span>
+                ))}
+              </div>
+            </div>
+            <div className="rounded-xl border border-gray-200 bg-white p-6 dark:border-gray-700 dark:bg-gray-800">
+              <div className="mb-3 flex h-10 w-10 items-center justify-center rounded-lg bg-green-100 text-green-700 dark:bg-green-900/50 dark:text-green-300">
+                <svg className="h-5 w-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 12h14M5 12a2 2 0 01-2-2V6a2 2 0 012-2h14a2 2 0 012 2v4a2 2 0 01-2 2M5 12a2 2 0 00-2 2v4a2 2 0 002 2h14a2 2 0 002-2v-4a2 2 0 00-2-2m-2-4h.01M17 16h.01" />
+                </svg>
+              </div>
+              <h3 className="font-semibold text-gray-900 dark:text-white">
+                For DevOps
+              </h3>
+              <p className="mt-2 text-sm text-gray-500 dark:text-gray-400">
+                Generate Dockerfiles, Terraform configs, Helm charts, and cron
+                expressions. Calculate subnets and validate infrastructure
+                templates.
+              </p>
+              <div className="mt-3 flex flex-wrap gap-1.5">
+                {["Dockerfile Generator", "Terraform Generator", "Subnet Calculator", "Cron Generator"].map((t) => (
+                  <span key={t} className="rounded-md bg-gray-100 px-2 py-1 text-xs text-gray-600 dark:bg-gray-700 dark:text-gray-400">{t}</span>
+                ))}
+              </div>
+            </div>
+            <div className="rounded-xl border border-gray-200 bg-white p-6 dark:border-gray-700 dark:bg-gray-800">
+              <div className="mb-3 flex h-10 w-10 items-center justify-center rounded-lg bg-purple-100 text-purple-700 dark:bg-purple-900/50 dark:text-purple-300">
+                <svg className="h-5 w-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9.663 17h4.673M12 3v1m6.364 1.636l-.707.707M21 12h-1M4 12H3m3.343-5.657l-.707-.707m2.828 9.9a5 5 0 117.072 0l-.548.547A3.374 3.374 0 0014 18.469V19a2 2 0 11-4 0v-.531c0-.895-.356-1.754-.988-2.386l-.548-.547z" />
+                </svg>
+              </div>
+              <h3 className="font-semibold text-gray-900 dark:text-white">
+                For AI &amp; ML Engineers
+              </h3>
+              <p className="mt-2 text-sm text-gray-500 dark:text-gray-400">
+                Count tokens for LLM prompts, convert JSON to TypeScript for
+                API schemas, and generate secure passwords for model
+                endpoints.
+              </p>
+              <div className="mt-3 flex flex-wrap gap-1.5">
+                {["Token Counter", "JSON to TypeScript", "Password Generator", "UUID Generator"].map((t) => (
+                  <span key={t} className="rounded-md bg-gray-100 px-2 py-1 text-xs text-gray-600 dark:bg-gray-700 dark:text-gray-400">{t}</span>
+                ))}
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section className="mt-16">
+        <div className="mx-auto max-w-4xl">
+          <h2 className="text-center text-2xl font-bold text-gray-900 dark:text-white">
             How It Works
           </h2>
           <p className="mx-auto mt-3 max-w-2xl text-center text-gray-600 dark:text-gray-400">
@@ -494,6 +594,42 @@ export default function HomePage() {
           </div>
         </div>
       </section>
+
+      <section className="mt-16">
+        <div className="mx-auto max-w-3xl text-center">
+          <h2 className="text-2xl font-bold text-gray-900 dark:text-white">
+            Built With
+          </h2>
+          <p className="mt-3 text-gray-600 dark:text-gray-400">
+            Modern web technologies, no frameworks, no servers.
+          </p>
+          <div className="mt-6 flex flex-wrap justify-center gap-3">
+            {[
+              { name: "Next.js", desc: "Static site generation" },
+              { name: "Web Crypto API", desc: "Secure hashing & encryption" },
+              { name: "React", desc: "Interactive UI components" },
+              { name: "Tailwind CSS", desc: "Responsive dark mode design" },
+              { name: "TypeScript", desc: "Type-safe tool logic" },
+            ].map((tech) => (
+              <div
+                key={tech.name}
+                className="rounded-lg border border-gray-200 bg-white px-4 py-3 text-center dark:border-gray-700 dark:bg-gray-800"
+              >
+                <p className="text-sm font-semibold text-gray-900 dark:text-white">
+                  {tech.name}
+                </p>
+                <p className="text-xs text-gray-500 dark:text-gray-400">
+                  {tech.desc}
+                </p>
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      <div className="mt-16 text-center text-xs text-gray-400 dark:text-gray-500">
+        <p>Last updated: {new Date().toLocaleDateString("en-US", { year: "numeric", month: "long", day: "numeric" })}</p>
+      </div>
     </div>
   );
 }

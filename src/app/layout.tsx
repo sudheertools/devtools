@@ -81,6 +81,44 @@ export default function RootLayout({
           crossOrigin="anonymous"
           strategy="afterInteractive"
         />
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{
+            __html: JSON.stringify({
+              "@context": "https://schema.org",
+              "@type": "Organization",
+              name: "DevTools",
+              url: "https://sudheertools.github.io",
+              description:
+                "69 free developer tools — JSON, Base64, UUID, regex, and more. 100% client-side, zero data uploads.",
+              sameAs: [],
+              offers: {
+                "@type": "Offer",
+                price: "0",
+                priceCurrency: "USD",
+              },
+            }),
+          }}
+        />
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{
+            __html: JSON.stringify({
+              "@context": "https://schema.org",
+              "@type": "WebSite",
+              name: "DevTools",
+              url: "https://sudheertools.github.io",
+              description:
+                "69 free developer tools that run entirely in your browser. Private, fast, and free.",
+              potentialAction: {
+                "@type": "SearchAction",
+                target:
+                  "https://sudheertools.github.io/?q={search_term_string}",
+                "query-input": "required name=search_term_string",
+              },
+            }),
+          }}
+        />
       </head>
       <body className="min-h-full flex flex-col">
         <ThemeProvider>
