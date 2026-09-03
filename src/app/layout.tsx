@@ -32,10 +32,10 @@ export const metadata: Metadata = {
     siteName: "DevTools",
     images: [
       {
-        url: "/og-image.png",
+        url: "/hero-image.svg",
         width: 1200,
         height: 630,
-        alt: "DevTools - Free Online Developer Tools",
+        alt: "DevTools - 69 Free Private Browser-Based Developer Tools",
       },
     ],
     type: "website",
@@ -45,7 +45,7 @@ export const metadata: Metadata = {
     title: "69 Free Developer Tools — Private, Browser-Based | DevTools",
     description:
       "69 free developer tools — JSON, Base64, UUID, regex, and more. 100% client-side, zero data uploads. No signup required.",
-    images: ["/og-image.png"],
+    images: ["/hero-image.svg"],
   },
   robots: {
     index: true,
@@ -169,6 +169,29 @@ export default function RootLayout({
                     "@type": "Answer",
                     text: "Most developer tool sites send your data to their servers for processing. Ours never does. This makes DevTools safe for sensitive data like API keys, JWT tokens, passwords, and proprietary code.",
                   },
+                },
+              ],
+            }),
+          }}
+        />
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{
+            __html: JSON.stringify({
+              "@context": "https://schema.org",
+              "@type": "BreadcrumbList",
+              itemListElement: [
+                {
+                  "@type": "ListItem",
+                  position: 1,
+                  name: "Home",
+                  item: "https://sudheertools.github.io",
+                },
+                {
+                  "@type": "ListItem",
+                  position: 2,
+                  name: "Tools",
+                  item: "https://sudheertools.github.io/#tools",
                 },
               ],
             }),
