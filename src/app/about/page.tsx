@@ -30,6 +30,48 @@ export default function AboutPage() {
           never leave your device.
         </p>
 
+        <div className="not-prose mt-6 rounded-xl border border-gray-200 bg-gray-50 p-6 dark:border-gray-700 dark:bg-gray-800">
+          <div className="flex items-center gap-4">
+            <div className="flex h-14 w-14 items-center justify-center rounded-full bg-blue-100 text-xl font-bold text-blue-700 dark:bg-blue-900/50 dark:text-blue-300">
+              SK
+            </div>
+            <div>
+              <p className="font-semibold text-gray-900 dark:text-white">
+                Sudheer Kumar
+              </p>
+              <p className="text-sm text-gray-500 dark:text-gray-400">
+                Developer &amp; Creator of DevTools
+              </p>
+              <div className="mt-2 flex gap-3">
+                <a
+                  href="https://github.com/sudheertools"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="text-sm text-gray-500 hover:text-gray-700 dark:text-gray-400 dark:hover:text-gray-200"
+                >
+                  GitHub
+                </a>
+                <a
+                  href="https://www.linkedin.com/in/sudheerkumargv/"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="text-sm text-gray-500 hover:text-gray-700 dark:text-gray-400 dark:hover:text-gray-200"
+                >
+                  LinkedIn
+                </a>
+                <a
+                  href="https://www.youtube.com/@TestingWithSudheer"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="text-sm text-gray-500 hover:text-gray-700 dark:text-gray-400 dark:hover:text-gray-200"
+                >
+                  YouTube
+                </a>
+              </div>
+            </div>
+          </div>
+        </div>
+
         <h2 className="mt-10 text-2xl font-bold text-gray-900 dark:text-white">
           Why This Exists
         </h2>

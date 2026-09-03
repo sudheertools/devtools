@@ -91,7 +91,11 @@ export default function RootLayout({
               url: "https://sudheertools.github.io",
               description:
                 "69 free developer tools — JSON, Base64, UUID, regex, and more. 100% client-side, zero data uploads.",
-              sameAs: [],
+              sameAs: [
+                "https://github.com/sudheertools",
+                "https://www.linkedin.com/in/sudheerkumargv/",
+                "https://www.youtube.com/@TestingWithSudheer",
+              ],
               offers: {
                 "@type": "Offer",
                 price: "0",
