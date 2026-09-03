@@ -51,7 +51,7 @@ export default function HomePage() {
           All processing happens in your browser
         </div>
         <h1 className="text-4xl font-bold tracking-tight text-gray-900 dark:text-white sm:text-5xl">
-          58 Free Developer Tools
+          69 Free Developer Tools
         </h1>
         <p className="mx-auto mt-4 max-w-2xl text-lg text-gray-600 dark:text-gray-400">
           Base64, JSON, UUID, regex, password generator, and more. All tools run

@@ -18,16 +18,16 @@ const geistMono = Geist_Mono({
 
 export const metadata: Metadata = {
   title: {
-    default: "58 Free Developer Tools — Browser-Based, No Signup | DevTools",
+    default: "69 Free Developer Tools — Browser-Based, No Signup | DevTools",
     template: "%s | DevTools",
   },
   description:
-    "58 free developer tools that run entirely in your browser. Base64, JSON, UUID, regex, password generator, and more. No signup. Your data never leaves your device.",
+    "69 free developer tools that run entirely in your browser. Base64, JSON, UUID, regex, password generator, and more. No signup. Your data never leaves your device.",
   metadataBase: new URL("https://sudheertools.github.io"),
   openGraph: {
-    title: "58 Free Developer Tools — Browser-Based, No Signup | DevTools",
+    title: "69 Free Developer Tools — Browser-Based, No Signup | DevTools",
     description:
-      "58 free developer tools that run entirely in your browser. Base64, JSON, UUID, regex, and more. No signup. Your data never leaves your device.",
+      "69 free developer tools that run entirely in your browser. Base64, JSON, UUID, regex, and more. No signup. Your data never leaves your device.",
     url: "https://sudheertools.github.io",
     siteName: "DevTools",
     images: [
@@ -42,9 +42,9 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: "summary_large_image",
-    title: "58 Free Developer Tools — Browser-Based, No Signup | DevTools",
+    title: "69 Free Developer Tools — Browser-Based, No Signup | DevTools",
     description:
-      "58 free developer tools that run entirely in your browser. Base64, JSON, UUID, regex, and more. No signup. Your data never leaves your device.",
+      "69 free developer tools that run entirely in your browser. Base64, JSON, UUID, regex, and more. No signup. Your data never leaves your device.",
     images: ["/og-image.png"],
   },
   robots: {

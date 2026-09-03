@@ -70,6 +70,31 @@ export const categories: ToolCategory[] = [
     slug: "reference",
     description: "Developer reference and lookup tools",
   },
+  {
+    name: "Code Generation",
+    slug: "code-generation",
+    description: "Generate code from data and schemas",
+  },
+  {
+    name: "DevOps",
+    slug: "devops",
+    description: "Infrastructure and deployment tools",
+  },
+  {
+    name: "Network",
+    slug: "network",
+    description: "Network calculation and analysis tools",
+  },
+  {
+    name: "FinTech",
+    slug: "fintech",
+    description: "Financial calculators and tools",
+  },
+  {
+    name: "AI Tools",
+    slug: "ai-tools",
+    description: "AI and LLM utility tools",
+  },
 ];
 
 export const tools: Tool[] = [
@@ -608,6 +633,110 @@ export const tools: Tool[] = [
     icon: "HTM",
     href: "/html-entities",
     relatedSlugs: ["ascii-table", "html-encode"],
+  },
+  // Code Generation
+  {
+    name: "JSON to TypeScript",
+    slug: "json-to-typescript",
+    category: "code-generation",
+    description: "Convert JSON data to TypeScript interfaces and types.",
+    icon: "TS",
+    href: "/json-to-typescript",
+    relatedSlugs: ["json-to-go", "json-to-rust", "json-to-dart"],
+  },
+  {
+    name: "JSON to Go",
+    slug: "json-to-go",
+    category: "code-generation",
+    description: "Convert JSON data to Go struct definitions with proper tags.",
+    icon: "GO",
+    href: "/json-to-go",
+    relatedSlugs: ["json-to-typescript", "json-to-rust"],
+  },
+  {
+    name: "JSON to Rust",
+    slug: "json-to-rust",
+    category: "code-generation",
+    description: "Convert JSON data to Rust struct definitions with serde derives.",
+    icon: "RS",
+    href: "/json-to-rust",
+    relatedSlugs: ["json-to-typescript", "json-to-go"],
+  },
+  {
+    name: "JSON to Dart",
+    slug: "json-to-dart",
+    category: "code-generation",
+    description: "Convert JSON data to Dart classes with fromJson/toJson methods.",
+    icon: "DRT",
+    href: "/json-to-dart",
+    relatedSlugs: ["json-to-typescript"],
+  },
+  // DevOps
+  {
+    name: "Dockerfile Generator",
+    slug: "dockerfile-generator",
+    category: "devops",
+    description: "Generate optimized Dockerfiles for Node.js, Python, Go, and more.",
+    icon: "DKR",
+    href: "/dockerfile-generator",
+    relatedSlugs: ["terraform-generator", "helm-chart-generator"],
+  },
+  {
+    name: "Terraform Generator",
+    slug: "terraform-generator",
+    category: "devops",
+    description: "Generate Terraform configuration for AWS, GCP, and Azure.",
+    icon: "TF",
+    href: "/terraform-generator",
+    relatedSlugs: ["dockerfile-generator", "helm-chart-generator"],
+  },
+  {
+    name: "Helm Chart Generator",
+    slug: "helm-chart-generator",
+    category: "devops",
+    description: "Generate Kubernetes Helm chart templates with configurable values.",
+    icon: "HLM",
+    href: "/helm-chart-generator",
+    relatedSlugs: ["dockerfile-generator", "terraform-generator"],
+  },
+  // Network
+  {
+    name: "Subnet Calculator",
+    slug: "subnet-calculator",
+    category: "network",
+    description: "Calculate subnet ranges, CIDR notation, and IP address info.",
+    icon: "NET",
+    href: "/subnet-calculator",
+    relatedSlugs: [],
+  },
+  // FinTech
+  {
+    name: "SIP Calculator",
+    slug: "sip-calculator",
+    category: "fintech",
+    description: "Calculate Systematic Investment Plan returns with projected wealth.",
+    icon: "SIP",
+    href: "/sip-calculator",
+    relatedSlugs: ["emi-calculator"],
+  },
+  {
+    name: "EMI Calculator",
+    slug: "emi-calculator",
+    category: "fintech",
+    description: "Calculate Equated Monthly Installments for any loan type.",
+    icon: "EMI",
+    href: "/emi-calculator",
+    relatedSlugs: ["sip-calculator"],
+  },
+  // AI Tools
+  {
+    name: "Token Counter",
+    slug: "token-counter",
+    category: "ai-tools",
+    description: "Count tokens, characters, and words for LLM prompts.",
+    icon: "TKN",
+    href: "/token-counter",
+    relatedSlugs: [],
   },
 ];
 
