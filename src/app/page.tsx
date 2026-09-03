@@ -71,6 +71,23 @@ export default function HomePage() {
           UUIDs, test regex, and {tools.length - 5} more tools — all free, all
           private.
         </p>
+        <div className="mt-6 flex flex-wrap items-center justify-center gap-3">
+          <a
+            href="/json-formatter"
+            className="inline-flex items-center gap-2 rounded-lg bg-blue-600 px-5 py-2.5 text-sm font-semibold text-white shadow-sm transition-colors hover:bg-blue-700"
+          >
+            Try JSON Formatter
+            <svg className="h-4 w-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M13 7l5 5m0 0l-5 5m5-5H6" />
+            </svg>
+          </a>
+          <a
+            href="/about"
+            className="inline-flex items-center gap-2 rounded-lg border border-gray-200 bg-white px-5 py-2.5 text-sm font-semibold text-gray-700 transition-colors hover:bg-gray-50 dark:border-gray-700 dark:bg-gray-800 dark:text-gray-300 dark:hover:bg-gray-700"
+          >
+            How it works
+          </a>
+        </div>
       </section>
 
       <div className="mt-8 flex flex-wrap items-center justify-center gap-6 text-sm text-gray-500 dark:text-gray-400">
@@ -98,6 +115,32 @@ export default function HomePage() {
           </svg>
           Dark mode supported
         </div>
+      </div>
+
+      <div className="mt-8 flex flex-wrap items-center justify-center gap-4">
+        <div className="flex items-center gap-2 rounded-full border border-gray-200 bg-white px-4 py-2 text-sm text-gray-600 dark:border-gray-700 dark:bg-gray-800 dark:text-gray-400">
+          <span className="text-lg font-bold text-gray-900 dark:text-white">{tools.length}</span>
+          <span>tools</span>
+        </div>
+        <div className="flex items-center gap-2 rounded-full border border-gray-200 bg-white px-4 py-2 text-sm text-gray-600 dark:border-gray-700 dark:bg-gray-800 dark:text-gray-400">
+          <span className="text-lg font-bold text-gray-900 dark:text-white">0</span>
+          <span>servers</span>
+        </div>
+        <div className="flex items-center gap-2 rounded-full border border-gray-200 bg-white px-4 py-2 text-sm text-gray-600 dark:border-gray-700 dark:bg-gray-800 dark:text-gray-400">
+          <span className="text-lg font-bold text-gray-900 dark:text-white">0</span>
+          <span>data breaches</span>
+        </div>
+        <a
+          href="https://github.com/sudheertools/sudheertools.github.io"
+          target="_blank"
+          rel="noopener noreferrer"
+          className="flex items-center gap-2 rounded-full border border-gray-200 bg-white px-4 py-2 text-sm text-gray-600 transition-colors hover:bg-gray-50 dark:border-gray-700 dark:bg-gray-800 dark:text-gray-400 dark:hover:bg-gray-700"
+        >
+          <svg className="h-4 w-4" fill="currentColor" viewBox="0 0 24 24">
+            <path fillRule="evenodd" d="M12 2C6.477 2 2 6.484 2 12.017c0 4.425 2.865 8.18 6.839 9.504.5.092.682-.217.682-.483 0-.237-.008-.868-.013-1.703-2.782.605-3.369-1.343-3.369-1.343-.454-1.158-1.11-1.466-1.11-1.466-.908-.62.069-.608.069-.608 1.003.07 1.531 1.032 1.531 1.032.892 1.53 2.341 1.088 2.91.832.092-.647.35-1.088.636-1.338-2.22-.253-4.555-1.113-4.555-4.951 0-1.093.39-1.988 1.029-2.688-.103-.253-.446-1.272.098-2.65 0 0 .84-.27 2.75 1.026A9.564 9.564 0 0112 6.844c.85.004 1.705.115 2.504.337 1.909-1.296 2.747-1.027 2.747-1.027.546 1.379.202 2.398.1 2.651.64.7 1.028 1.595 1.028 2.688 0 3.848-2.339 4.695-4.566 4.943.359.309.678.92.678 1.855 0 1.338-.012 2.419-.012 2.747 0 .268.18.58.688.482A10.019 10.019 0 0022 12.017C22 6.484 17.522 2 12 2z" clipRule="evenodd" />
+          </svg>
+          Open source
+        </a>
       </div>
 
       {recentlyUsed.length > 0 && (
@@ -130,7 +173,7 @@ export default function HomePage() {
 
       <section className="mt-10">
         <h2 className="mb-4 text-center text-sm font-semibold uppercase tracking-wider text-gray-500 dark:text-gray-400">
-          Popular Tools
+          Most Popular Tools
         </h2>
         <div className="mx-auto grid max-w-3xl gap-3 sm:grid-cols-3">
           {[
@@ -139,43 +182,54 @@ export default function HomePage() {
               desc: "Format, validate, and beautify JSON",
               href: "/json-formatter",
               icon: "JSON",
+              popular: true,
             },
             {
               name: "Base64 Encoder",
               desc: "Encode text with Unicode support",
               href: "/base64-encode",
               icon: "ENC",
+              popular: true,
             },
             {
               name: "UUID Generator",
               desc: "Generate random UUID v4 identifiers",
               href: "/uuid-generator",
               icon: "UID",
+              popular: true,
             },
             {
               name: "Password Generator",
               desc: "Create strong, secure passwords",
               href: "/password-generator",
               icon: "PWD",
+              popular: true,
             },
             {
               name: "Regex Tester",
               desc: "Test regular expressions live",
               href: "/regex-tester",
               icon: "REG",
+              popular: true,
             },
             {
               name: "Hash Generator",
               desc: "MD5, SHA-1, SHA-256, SHA-512",
               href: "/hash-generator",
               icon: "HASH",
+              popular: false,
             },
           ].map((tool) => (
             <a
               key={tool.href}
               href={tool.href}
-              className="flex items-center gap-3 rounded-xl border border-gray-200 bg-white p-4 transition-all hover:border-blue-300 hover:shadow-md dark:border-gray-700 dark:bg-gray-800 dark:hover:border-blue-600"
+              className="relative flex items-center gap-3 rounded-xl border border-gray-200 bg-white p-4 transition-all hover:border-blue-300 hover:shadow-md dark:border-gray-700 dark:bg-gray-800 dark:hover:border-blue-600"
             >
+              {tool.popular && (
+                <span className="absolute -top-2 -right-2 inline-flex items-center rounded-full bg-amber-100 px-2 py-0.5 text-[10px] font-bold text-amber-700 dark:bg-amber-900/50 dark:text-amber-300">
+                  Popular
+                </span>
+              )}
               <span className="flex h-10 w-10 flex-shrink-0 items-center justify-center rounded-lg bg-blue-100 text-xs font-bold text-blue-700 dark:bg-blue-900/50 dark:text-blue-300">
                 {tool.icon}
               </span>

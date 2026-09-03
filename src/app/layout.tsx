@@ -123,6 +123,57 @@ export default function RootLayout({
             }),
           }}
         />
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{
+            __html: JSON.stringify({
+              "@context": "https://schema.org",
+              "@type": "FAQPage",
+              mainEntity: [
+                {
+                  "@type": "Question",
+                  name: "Is this really free?",
+                  acceptedAnswer: {
+                    "@type": "Answer",
+                    text: "Yes, completely free. No sign-up, no limits, no premium tier. All 69 tools are available to everyone.",
+                  },
+                },
+                {
+                  "@type": "Question",
+                  name: "Does it collect my data?",
+                  acceptedAnswer: {
+                    "@type": "Answer",
+                    text: "No. Every tool runs entirely in your browser. No data is sent to any server. You can verify this by opening your browser's DevTools Network tab — you'll see zero outgoing requests.",
+                  },
+                },
+                {
+                  "@type": "Question",
+                  name: "Can I use it offline?",
+                  acceptedAnswer: {
+                    "@type": "Answer",
+                    text: "Yes. Once the page is loaded, all tools work offline. No internet connection is required for processing.",
+                  },
+                },
+                {
+                  "@type": "Question",
+                  name: "Which browsers are supported?",
+                  acceptedAnswer: {
+                    "@type": "Answer",
+                    text: "All modern browsers: Chrome, Firefox, Safari, Edge. The tools use standard Web APIs (Web Crypto, FileReader, etc.) that work across all major browsers.",
+                  },
+                },
+                {
+                  "@type": "Question",
+                  name: "How is this different from other tool sites?",
+                  acceptedAnswer: {
+                    "@type": "Answer",
+                    text: "Most developer tool sites send your data to their servers for processing. Ours never does. This makes DevTools safe for sensitive data like API keys, JWT tokens, passwords, and proprietary code.",
+                  },
+                },
+              ],
+            }),
+          }}
+        />
       </head>
       <body className="min-h-full flex flex-col">
         <ThemeProvider>

@@ -72,6 +72,15 @@ export default function AboutPage() {
           </div>
         </div>
 
+        <p className="text-gray-600 dark:text-gray-400">
+          I built DevTools because I was tired of pasting sensitive data — API
+          keys, JWT tokens, customer JSON — into random online tools that send
+          everything to their servers. Every tool here runs entirely in your
+          browser using client-side JavaScript and the Web Crypto API. Your data
+          never touches a server. I use these tools daily in my own work, and I
+          built them to be the tools I wished existed.
+        </p>
+
         <h2 className="mt-10 text-2xl font-bold text-gray-900 dark:text-white">
           Why This Exists
         </h2>
