@@ -420,4 +420,46 @@
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
   </url>
+  <url>
+    <loc>https://sudheertools.github.io/about</loc>
+    <lastmod>2026-09-03T16:15:00.000Z</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://sudheertools.github.io/privacy</loc>
+    <lastmod>2026-09-03T16:15:00.000Z</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  <url>
+    <loc>https://sudheertools.github.io/guides/json-formatting</loc>
+    <lastmod>2026-09-03T16:15:00.000Z</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://sudheertools.github.io/guides/jwt-decoding</loc>
+    <lastmod>2026-09-03T16:15:00.000Z</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://sudheertools.github.io/guides/base64-encoding</loc>
+    <lastmod>2026-09-03T16:15:00.000Z</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://sudheertools.github.io/guides/uuid-generation</loc>
+    <lastmod>2026-09-03T16:15:00.000Z</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://sudheertools.github.io/guides/regex-testing</loc>
+    <lastmod>2026-09-03T16:15:00.000Z</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
 </urlset>

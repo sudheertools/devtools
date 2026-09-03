@@ -1,6 +1,6 @@
 "use client";
 
-import { useState, useMemo } from "react";
+import { useState, useMemo, useEffect } from "react";
 import { tools, categories } from "@/lib/tools/registry";
 import ToolCard from "@/components/tools/ToolCard";
 import ThemeToggle from "@/components/layout/ThemeToggle";
@@ -9,6 +9,18 @@ import HomeAds from "@/components/tools/HomeAds";
 export default function HomePage() {
   const [searchQuery, setSearchQuery] = useState("");
   const [selectedCategory, setSelectedCategory] = useState("all");
+  const [recentlyUsed, setRecentlyUsed] = useState<string[]>([]);
+
+  useEffect(() => {
+    try {
+      const stored = localStorage.getItem("recentlyUsed");
+      if (stored) {
+        setRecentlyUsed(JSON.parse(stored));
+      }
+    } catch {
+      // ignore
+    }
+  }, []);
 
   const filteredTools = useMemo(() => {
     let result = tools;
@@ -87,6 +99,34 @@ export default function HomePage() {
           Dark mode supported
         </div>
       </div>
+
+      {recentlyUsed.length > 0 && (
+        <section className="mt-10">
+          <h2 className="mb-4 text-center text-sm font-semibold uppercase tracking-wider text-gray-500 dark:text-gray-400">
+            Recently Used
+          </h2>
+          <div className="mx-auto flex max-w-3xl flex-wrap justify-center gap-2">
+            {recentlyUsed.slice(0, 6).map((slug) => {
+              const tool = tools.find((t) => t.slug === slug);
+              if (!tool) return null;
+              return (
+                <a
+                  key={tool.slug}
+                  href={tool.href}
+                  className="flex items-center gap-2 rounded-lg border border-gray-200 bg-white px-3 py-2 text-sm transition-all hover:border-blue-300 hover:shadow-sm dark:border-gray-700 dark:bg-gray-800 dark:hover:border-blue-600"
+                >
+                  <span className="flex h-6 w-6 items-center justify-center rounded bg-gray-100 text-[10px] font-bold text-gray-600 dark:bg-gray-700 dark:text-gray-400">
+                    {tool.icon}
+                  </span>
+                  <span className="text-gray-700 dark:text-gray-300">
+                    {tool.name}
+                  </span>
+                </a>
+              );
+            })}
+          </div>
+        </section>
+      )}
 
       <section className="mt-10">
         <h2 className="mb-4 text-center text-sm font-semibold uppercase tracking-wider text-gray-500 dark:text-gray-400">
@@ -590,6 +630,73 @@ export default function HomePage() {
               >
                 {ref.name}
               </a>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      <section className="mt-16">
+        <div className="mx-auto max-w-4xl">
+          <h2 className="text-center text-2xl font-bold text-gray-900 dark:text-white">
+            Quick Comparisons
+          </h2>
+          <p className="mx-auto mt-3 max-w-2xl text-center text-gray-600 dark:text-gray-400">
+            Not sure which tool to use? Here are the most common decisions.
+          </p>
+          <div className="mt-8 grid gap-4 sm:grid-cols-2">
+            {[
+              {
+                tool1: "JSON Formatter",
+                tool2: "JSON Validator",
+                desc: "Formatter beautifies JSON. Validator checks if JSON is structurally correct.",
+                href1: "/json-formatter",
+                href2: "/json-validator",
+              },
+              {
+                tool1: "Base64 Encoder",
+                tool2: "Image to Base64",
+                desc: "Encoder handles text. Image to Base64 converts image files to data URIs.",
+                href1: "/base64-encode",
+                href2: "/image-to-base64",
+              },
+              {
+                tool1: "Hash Generator",
+                tool2: "Password Generator",
+                desc: "Hash Generator creates checksums. Password Generator creates secure random strings.",
+                href1: "/hash-generator",
+                href2: "/password-generator",
+              },
+              {
+                tool1: "URL Encoder",
+                tool2: "URL Parser",
+                desc: "Encoder escapes special characters. Parser extracts query params and components.",
+                href1: "/url-encode",
+                href2: "/url-parser",
+              },
+            ].map((item) => (
+              <div
+                key={item.tool1}
+                className="rounded-xl border border-gray-200 bg-white p-5 dark:border-gray-700 dark:bg-gray-800"
+              >
+                <div className="flex items-center gap-2 text-sm">
+                  <a
+                    href={item.href1}
+                    className="font-semibold text-blue-600 hover:text-blue-700 dark:text-blue-400"
+                  >
+                    {item.tool1}
+                  </a>
+                  <span className="text-gray-400">vs</span>
+                  <a
+                    href={item.href2}
+                    className="font-semibold text-blue-600 hover:text-blue-700 dark:text-blue-400"
+                  >
+                    {item.tool2}
+                  </a>
+                </div>
+                <p className="mt-2 text-sm text-gray-500 dark:text-gray-400">
+                  {item.desc}
+                </p>
+              </div>
             ))}
           </div>
         </div>
